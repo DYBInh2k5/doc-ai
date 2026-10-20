@@ -13,4 +13,4 @@ COPY .env.example ./.env.example
 RUN mkdir -p data/uploads
 
 EXPOSE 7860
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "app.py"]
