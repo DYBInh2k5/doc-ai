@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: doc-ai
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: llama-3.3-70b-versatile
+      - key: OPENAI_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: JWT_SECRET
+        generateValue: true

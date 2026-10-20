@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doc AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow">DOC AI / PRIVATE RESEARCH</p>
+      <h1>Đọc tài liệu.<br><em>Hỏi bất cứ điều gì.</em></h1>
+      <p class="lede">Một không gian gọn để biến những file dài thành câu trả lời có căn cứ.</p>
+      <div class="signal"><span></span> PDF + TXT · Trích dẫn theo đoạn · Lịch sử riêng tư</div>
+    </section>
+
+    <section class="app-panel">
+      <div id="auth-view" class="auth-view">
+        <div class="panel-heading"><span class="kicker">BẮT ĐẦU</span><h2>Chào bạn.</h2><p>Tạo tài khoản để giữ tài liệu và các cuộc trò chuyện của bạn.</p></div>
+        <form id="auth-form">
+          <label>Email<input id="email" type="email" required placeholder="ban@example.com"></label>
+          <label>Mật khẩu<input id="password" type="password" required minlength="6" placeholder="Ít nhất 6 ký tự"></label>
+          <button type="submit" class="primary">Đăng nhập <span>↗</span></button>
+        </form>
+        <button id="toggle-auth" class="text-button">Chưa có tài khoản? Đăng ký</button>
+        <p id="auth-error" class="error"></p>
+      </div>
+
+      <div id="workspace" class="workspace hidden">
+        <header class="topbar"><div><span class="kicker">KHÔNG GIAN CỦA BẠN</span><h2>Hỏi tài liệu</h2></div><button id="logout" class="ghost">Đăng xuất</button></header>
+        <div class="workspace-grid">
+          <aside class="library">
+            <div class="library-head"><h3>Tài liệu</h3><label class="upload"><input id="file-input" type="file" accept=".pdf,.txt">+ Thêm file</label></div>
+            <p class="hint">Tải lên PDF hoặc TXT để bắt đầu.</p>
+            <div id="document-list" class="document-list"></div>
+            <h3 class="history-title">Lịch sử gần đây</h3><div id="history-list" class="history-list"></div>
+          </aside>
+          <section class="chat">
+            <div id="empty-chat" class="empty-chat"><div class="mark">✦</div><h3>Chọn một tài liệu</h3><p>AI sẽ đọc nội dung và tìm những đoạn liên quan đến câu hỏi của bạn.</p></div>
+            <div id="messages" class="messages hidden"></div>
+            <form id="chat-form" class="chat-form"><input id="question" disabled placeholder="Chọn tài liệu rồi đặt câu hỏi..."><button disabled aria-label="Gửi câu hỏi">↗</button></form>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
