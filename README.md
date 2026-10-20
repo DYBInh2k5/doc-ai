@@ -33,7 +33,16 @@ AI-powered document intelligence platform built with Next.js 14, Supabase, and P
 - 🔜 API access for Enterprise
 │   ├── app/              # Next.js App Router
 │   │   ├── pricing/      # Pricing page
- # Doc AI
+---
+title: Doc AI
+emoji: 📚
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+---
+
+# Doc AI
 
  Ứng dụng hỏi đáp tài liệu PDF/TXT bằng FastAPI và giao diện web đơn giản.
 
@@ -70,7 +79,7 @@ AI-powered document intelligence platform built with Next.js 14, Supabase, and P
 
  ## Deploy Render
 
- Repository có sẵn `Dockerfile` và `render.yaml`. Trên Render chọn **New > Blueprint**, kết nối repository, rồi thêm `OPENAI_API_KEY` trong Environment Variables.
+Repository có sẵn `Dockerfile` và `render.yaml`. Trên Hugging Face Spaces chọn **Docker Space**, kết nối hoặc upload repository này, rồi thêm `OPENAI_API_KEY`, `OPENAI_MODEL`, `OPENAI_BASE_URL` và `JWT_SECRET` trong Settings > Variables and secrets.
 
  SQLite và file upload trên gói free có thể mất khi service khởi động lại. Khi dùng thật, nên chuyển sang PostgreSQL và object storage.
 │   │   └── page.tsx      # Landing page
